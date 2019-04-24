@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta charset="utf-8">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link rel="stylesheet" href="style.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+    function pressb(){
+      b = document.getElementById('result')
+      b.style.display = "block";
+    }
+    </script>
+
+		<script>
+				$(document).ready(function(){
+				$("button").click(function(){
+				var url ="/app/results";
+				    $.get(url, function(data, status){
+				        var result ="";
+								result += "<div> <div><br>";
+				        result += "<div>"+ "dog votes: " + data['dogs']+"<div><br>";
+								result += "<div>"+ "cat votes: " + data['cats']+"<div><br>";
+				        $("#result").html(result);
+				    	});
+					});
+				});
+			</script>
+
+	</head>
+	<body>
+		 <img src="results.jpg" alt="Result">
+		<h2>THE RESULTS FOR THE COOLEST PET IS !</h2>
+        <div>
+            <button type="button" onclick="pressb()">Show results</button>
+        </div>
+				<h2><div id="result"></div></h2>
+		</div>
+
+	</body>
+</html>

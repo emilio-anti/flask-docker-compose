@@ -1,0 +1,23 @@
+#Execute the following command to start the dockerized environment
+#docker-compose up --build --scale web=2
+version: '3'
+
+services:
+  app:
+    build: app/
+    ports:
+      - "5000:5000"
+  redis:
+    image: "redis:alpine"
+  web:
+    build: web/
+    ports:
+      - "8080:80"
+  proxy:
+    build: proxy/
+    ports:
+     - "9000:80"
+    depends_on:
+      - app
+      - web
+      - redis

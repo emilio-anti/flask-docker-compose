@@ -1,0 +1,23 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta charset="utf-8">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<h2>VOTE FOR YOUR FAVORITE ANIMAL AND SEE WHO WINS!</h2>
+    <img src="image.jpg" alt="Let the games begin...">
+		<div class="container">
+		  <form action="/app/vote" method='POST'>
+        <div>
+            <h2>Are you a cat person or a dog person?</h2>
+            <input onclick="window.location.href = '/thanks';" type="submit" name="dogs" value="dogs"></input>
+            <input onclick="window.location.href = '/thanks';" type="submit" name="cats" value="cats"></input>
+        </div>
+		  </form>
+		</div>
+	</body>
+</html>
